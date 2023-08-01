@@ -30,7 +30,6 @@ jobs:
         run: echo Hello, world!
 
       - name: Setup Xcode version
-        run: echo Bump-Version
         uses: maxim-lobanov/setup-xcode@v1.5.1
 
       # Runs a set of commands using the runners shell
