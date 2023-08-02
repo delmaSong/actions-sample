@@ -24,6 +24,7 @@ jobs:
 #         project-path: Sample
     - name: bump version
       run: |
+        cd Sample/
         agvtool new-version -all 3.2
           
     - name: update
