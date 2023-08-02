@@ -15,7 +15,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
         with:
-        token: ${{ secrets.TOKEN }}
+        token: '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'
       - uses: yanamura/ios-bump-version@v1
         with:
         version: 1.1.0
