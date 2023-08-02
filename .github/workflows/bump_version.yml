@@ -21,6 +21,7 @@ jobs:
       with:
         version: '1.1.0'
         build-number: '2'
+        project-path: Sample
           
     - name: update
       run: |
