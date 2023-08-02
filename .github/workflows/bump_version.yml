@@ -16,6 +16,9 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
     
+      - name: Select Xcode
+        run: sudo xcode-select -switch /Applications/Xcode_14.2.app
+      
       - uses: yanamura/ios-bump-version@v1.7.0
 
       - name: update
