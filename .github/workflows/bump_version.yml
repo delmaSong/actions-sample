@@ -3,29 +3,19 @@
 name: bump_version
 
 on:
-  push:
-    branches: [ "main" ]
+  workflow_dispatch:
+    inputs:
+      version:
+        description: new app version x.x.x.
 
 jobs:
-  build:
+  versionup:
     runs-on: macos-latest
     steps:
-    - uses: maxim-lobanov/setup-xcode@v1
-      with:
-        xcode-version: latest-stable
-
     - uses: actions/checkout@v3
-      
-#     - uses: yanamura/ios-bump-version@v1.7.0
-#       with:
-#         version: '1.1.0'
-#         build-number: '2'
-#         project-path: Sample
-    - name: bump version
-      run: |
-        cd Sample/
-        agvtool new-version -all 3.2
-          
+    - uses: yanamura/ios-bump-version@v1
+      with:
+        version: ${{ github.event.inputs.version }}
     - name: update
       run: |
         git add .
